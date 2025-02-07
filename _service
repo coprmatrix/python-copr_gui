@@ -1,0 +1,20 @@
+<services>
+  <service name="obs_scm">
+    <param name="filename">copr_gui</param>
+    <param name="scm">git</param>
+    <param name="url">https://pagure.io/matrix/python-copr-wx</param>
+    <param name="revision">HEAD</param>
+    <!--param name="versionformat">@PARENT_TAG@</param-->
+    <!--param name="changesgenerate">enable</param-->
+    <param name="without-version">enable</param>
+  </service>
+    <service mode="buildtime" name="py2pack_generate">
+        <param name="noop">enable</param>
+    </service>
+    <service mode="buildtime" name="py_build">
+        <param name="noop">enable</param>
+    </service>
+  <service name="run" mode="buildtime">
+    <param name="command">source main.sh</param>
+  </service>
+</services>
